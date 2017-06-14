@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      
+        Profile
+      
+    </title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="../assets/css/toolkit.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link href="../assets/css/application.css" rel="stylesheet">
+    <link href="../assets/css/temp.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        background: white;
+      }
+    </style>
+
+  </head>
+
+
+<body class="with-top-navbar">
+    <div class="growl" id="app-growl"></div>
+    <nav class="navbar navbar-inverse navbar-fixed-top app-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand sendlogoleft" href="../index.html">
+            <img src="../assets/img/static/Develup.png" alt="brand">
+          </a>
+        </div>
+        <div class="navbar-collapse collapse pushnavright" id="navbar-collapse-main">
+          <ul class="nav navbar-nav hidden-md">
+            <li>
+              <a href="../home/index.html">Home</a>
+            </li>
+            <!-- My Profiles Dropdown menu -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiles <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="../profile/index.html">My Profile</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="../business-profile/index.html">Develup</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="#">+ Add a Startup!</a>
+                </li>
+              </ul>
+            </li>
+                      
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listings <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/opportunities/index.html">Opportunities</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/cofinder/index.html">CoFinder</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/talent/index.html">Talent Pool</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/manager/index.html">Manager</a>
+            </li>
+            <li>
+              <a href="/blog/index.html">Resources</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav morespacenav navbar-right m-r-0 hidden-xs">
+            <li>
+              <p class="navbar-btn">
+                  <a href="#" class="btn btn-clear">Trial Premium</a>
+              </p>
+            </li>
+            <li>
+              <a class="app-notifications" href="/messenger/messenger.html">
+                <span class="icon icon-chat"></span>
+              </a>
+            </li>
+            <li>
+              <a class="app-notifications" href="/notifications/index.html">
+                <span class="icon icon-bell"></span>
+              </a>
+            </li>
+            <li>
+              <!-- Top right Profile Photo-->
+              <button class="btn btn-default navbar-btn navbar-btn-avitar" data-toggle="popover">
+                <img id="facebookprofile" class="img-circle" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">
+              </button>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right app-search" role="search">
+            <div class="form-group has-feedback">
+              <input type="text" class="form-control" placeholder="Search" data-action="grow">
+              <i class="glyphicon icon icon-magnifying-glass form-control-feedback"></i>
+            </div>
+          </form>
+          <!--right drop down-->
+          <ul class="nav navbar-nav hidden">
+            <li><a href="../profile/index.html">Profile</a></li>
+            <li><a href="#">Give Feedback</a></li>
+            <li><a href="../startups/index.html">Startups</a></li>
+            <li><a href="#">Settings</a></li>
+            <li onclick="logout()"><a href="#">Logout</a></li>
+            <li><a href="../docs/index.html">Docs</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<div class="profile-header text-center"
+     style="background-image: url(../assets/img/LofvTx.jpg); background-position: center center">
+  <div class="container">
+    <div class="container-inner">
+      <img id="facebookprofilebig" class="img-circle media-object margin-drop" src="../assets/img/static/profplaceholder.png">
+      <h3 id="displayname" class="profile-header-user"></h3>
+      <p id="userbio" class="profile-header-bio">
+        Chief Marketing and UI Designer at Develup.co
+      </p>
+    </div>
+    
+    <!-- Large modal -->
+    <!--<button class="col-md-offset-8 btn btn-primary profile-action-btn"><i class="material-icons edit-icon" data-toggle="modal-profile-edit" data-target="edit-profile">mode_edit</i>Edit My Profile</button> -->
+    
+      <!-- Button trigger modal -->
+      <button type="button" class="col-md-offset-8 btn btn-primary profile-action-btn pull-right" data-toggle="modal" data-target="#myModal">
+        Edit My Profile
+      </button>
+      <!-- Modal -->
+      <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Edit Profile</h4>
+            </div>
+            <div class="modal-body">
+              <div class="col-md-4 margin-20">
+                <!--Side Panel Information-->
+                <!--Load their past information if available so they can just amend it-->
+                <div class="panel panel-default container-colour-blue-drop listing-tile user-skill-tiles">
+                  <p class="san-serif-text-DGrey blue-headers">Quick Details</p>
+                  <p class="san-serif-text-DGrey margin-15">Your Specialty</p>
+                  <div class ="account-detail-fields">
+                    <input type="text" class="form-control" placeholder="i.e. Corporate Solutions" id="specialty">
+                  </div>
+                  <p class="san-serif-text-DGrey margin-15">Where did you Study?</p>
+                  <div class ="account-detail-fields">
+                    <input type="text" class="form-control" placeholder="i.e. Griffith University" id="study">
+                  </div>
+                  <p class="san-serif-text-DGrey margin-15">Job Title</p>
+                  <div class ="account-detail-fields">
+                    <input type="text" class="form-control" placeholder="i.e. Database Manager" id="job">
+                  </div>
+                  <button type="button" class="btn btn-primary margin-10" onclick="savequickjazz()">Save Details</button>
+                </div>
+              </div><!--Col-md-4 END-->
+              
+              <div class="col-md-8 margin-20">
+                <!--About me Description-->
+                <div class="panel panel-default container-colour-blue-drop listing-tile user-skill-tiles">
+                  <p class="san-serif-text-DGrey blue-headers">About Me</p>
+                  <div class ="account-detail-fields">
+                    <textarea class="form-control" rows="4" placeholder="Now is your time to shine! Heres a couple ideas! i.e. 'What do you do? What have you studied? Why you?'" id="aboutme"></textarea>
+                  </div>
+                  <button type="button" class="btn btn-primary margin-10" onclick="saveaboutme()">Save About Me</button>
+                </div>
+                
+                <!--Skill Entry-->
+                <div class="panel panel-default container-colour-blue-drop listing-tile user-skill-tiles">
+                  <p class="san-serif-text-DGrey blue-headers">Add a New Skill</p>
+                  <div class ="account-detail-fields">
+                    <input type="text" class="form-control" placeholder="i.e. UX/UI Designer" id="skilltitle">
+                  </div>
+                  <p class="san-serif-text-DGrey">Skill Description</p>
+                  <div class ="account-detail-fields">
+                    <textarea class="form-control" rows="4" placeholder="i.e. What have you done OR do you do with this skill?" id="skilldesc"></textarea>
+                  </div>
+                  <p class="san-serif-text-DGrey">Provide up to 2 Portfolio links for this skill</p>
+                  <div class ="account-detail-fields">
+                    <input type="text" class="form-control" placeholder="i.e. http://www.example.com" id="skilllink1">
+                    <input type="text" class="form-control margin-5" placeholder="i.e. http://www.example.com" id="skilllink2">
+                  </div>
+                  <button type="button" class="btn btn-primary margin-10" onclick="saveskills()">Save New Skill</button>
+                </div>
+              </div><!--Col-md-8 END-->
+            </div>
+            
+            <div class="modal-footer">
+              <!--Only those not previously entered-->
+              <button type="button" class="btn btn-primary">Save All</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!--######### END HEADER ##########-->
+
+<div class="col-md-3">
+  <div class="panel panel-default container-colour-blue-drop listing-tile margin-45">
+    <div class="panel-body">
+      <ul class="list-unstyled list-spaced user-about-tile">
+        <li><i class="material-icons md-blue" id="user-profession">account_circle</i><p>UX/UI Designer and Developer</p></li>
+        <li><i class="material-icons md-blue" id="user-education">school</i><p>Went to Griffith University</p></li>
+        <li><i class="material-icons md-blue" id="user-location">location_on</i><p>Lives in Gold Coast, Australia</p></li>
+        <li><i class="material-icons md-blue" id="user-connections">share</i><p>139 Connections</p></li>
+        <li><i class="material-icons md-blue" id="user-startup-1">business_center</i><p>UX/UI Designer and Developer</p></li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel panel-default container-colour-blue-drop listing-tile">
+    <div class="list-group">
+      <a href="#" class="list-group-item"><img id="facebookprofile" class="img-circle profile-small" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">Another User</a>
+      <a href="#" class="list-group-item"><img id="facebookprofile" class="img-circle profile-small" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">Another User</a>
+      <a href="#" class="list-group-item"><img id="facebookprofile" class="img-circle profile-small" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">Another User</a>
+      <a href="#" class="list-group-item"><img id="facebookprofile" class="img-circle profile-small" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">Another User</a>
+      <a href="#" class="list-group-item"><img id="facebookprofile" class="img-circle profile-small" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">Another User</a>
+      <a href="#" class="list-group-item"><img id="facebookprofile" class="img-circle profile-small" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">Another User</a>
+      <a href="#" class="list-group-item"><img id="facebookprofile" class="img-circle profile-small" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">Another User</a>
+      <a href="#" class="list-group-item"><img id="facebookprofile" class="img-circle profile-small" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">Another User</a>
+    </div>
+    <button class="col-md-12 secondary-cta">View All Connections</button>
+  </div>
+</div>
+
+<!--Right Container col-md-9-->
+<div class="col-md-9">
+  <!--About Me Start-->
+  <h4 class="col-md-3 profile-headers">About Me</h4>
+  <div class="col-md-12">
+    <div class="panel panel-default container-colour-blue-drop listing-tile">
+      <div class="panel-body">
+        <p class="col-md-12" id="about-description"></p>
+        <!-- I’m a young design enthusiast and aspiring software developer, specialising in the delivery of powerful and unique digital experiences through website and mobile UI design. UI Design is my preferred field of work yet I am also a skilled and experience marketer and web developer. I have had extensive experience in the professional front both as a Lead UX/UI Designer and VP of Design, and through other freelance opportunities I have been given throughout my career and I continue to advance my skillsets through adaptive design conceptualisation. -->
+      </div>
+    </div>
+  </div><!--About Me End-->
+  <!--My Skills Start-->
+  <h4 class="col-md-3 profile-headers">My Skills</h4>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary pull-right" style="margin-right: 15px;" data-toggle="modal" data-target="#newSkillEntry">
+    Add New Skill
+  </button>
+  <div class="col-md-12">
+    <div class="panel panel-default container-colour-blue-drop listing-tile user-skill-tiles">
+      <div class="panel-body">
+        <div class="col-md-1">
+          <img src="../assets/img/WebITSubC.png" style="width:60px;height:60px;" alt="Skill Icon">
+        </div>
+        <div class="col-md-11">  
+          <ul class="list-unstyled">
+            <a href="#" class="col-md-2 col-md-offset-10 skill-tile-edit" data-toggle="modal" data-target="#mySkillsEdit"><i class="material-icons md-blue">edit</i>Edit</a>
+            <li id="user-skill-title"><h4>Web and Mobile Application Development<h4></li>
+            <li id="user-skill-description">HTML, CSS, JavaScript, Ionic 3, Angular 4, TypeScript, PHP, Python</li>
+            <br />
+            <li id="user-skill-link"><i class="material-icons md-blue">link</i><a href="#">https://github.com/dylanbirot</a></li>
+            <li id="user-skill-link"><i class="material-icons md-blue">link</i><a href="#">www.codepen.com/dylanbirot</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <div class="col-md-12">
+    <div class="panel panel-default container-colour-blue-drop listing-tile user-skill-tiles">
+      <div class="panel-body">
+        <div class="col-md-1">
+          <img src="../assets/img/WebDesignSubC.png" style="width:60px;height:60px;" alt="Skill Icon">
+        </div>
+        <div class="col-md-11">  
+          <ul class="list-unstyled">
+            <a href="#" class="col-md-2 col-md-offset-10 skill-tile-edit" data-toggle="modal" data-target="#mySkillsEdit"><i class="material-icons md-blue">edit</i>Edit</a>
+            <li id="user-skill-title"><h4>UX/UI Designer<h4></li>
+            <li id="user-skill-description">I have extensive experience in designing for mobile applications, websites and desktop applications. I also have thorough knowledge of Material Design principles and have applied these design concepts to various Android applications in the past. </li>
+            <br />
+            <li id="user-skill-link"><i class="material-icons md-blue">link</i><a href="#">https://dribbble.com/dylanbirot</a></li>
+            <li id="user-skill-link"><i class="material-icons md-blue">link</i><a href="#">https://behance.net/dylanbirot</a></li>
+          </ul>
+        </div>
+        <div class="gallery">
+          <div class="showcase-img">
+            <img src="/assets/img/Katch.png" alt="Fjords">
+          </div>
+        <div class="desc"><h5>Katch App UI</h5></div>
+        </div>
+        <div class="gallery">
+          <div class="showcase-img">
+            <img src="/assets/img/JolonsSite.png" alt="Forest">
+          </div>
+          <div class="desc"><h5>AppFactory Site UI Redesign</h5></div>
+        </div>
+        <div class="gallery">
+          <div class="showcase-img">
+            <img src="/assets/img/Home Tabs.png" alt="Northern Lights">
+          </div>
+          <div class="desc"><h5>AppFactory Site UI Redesign</h5></div>
+        </div>    
+      </div>
+    </div>
+  </div><!--My Skills End-->
+</div>
+
+<!-- Individual Modals -->
+
+<!-- Edit POPULATED Skills Modal -->
+<!-- Populate with Users skill that they have selected to edit. From this they can then amend it and Save Changes OR they can also Delete from here. -->
+<div class="modal fade bs-example-modal-lg" id="mySkillsEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit Skills</h4>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12 margin-20">
+          <!--Skill Entry-->
+          <div class="panel panel-default container-colour-blue-drop listing-tile user-skill-tiles">
+            <p class="san-serif-text-DGrey blue-headers">Skill Title</p>
+            <div class ="account-detail-fields">
+              <input type="text" class="form-control" placeholder="PRE-POPULATED">
+            </div>
+            <p class="san-serif-text-DGrey">Skill Description</p>
+            <div class ="account-detail-fields">
+              <textarea class="form-control" rows="4" placeholder="PRE-POPULATED"></textarea>
+            </div>
+            <p class="san-serif-text-DGrey">Provide up to 2 Portfolio links for this skill</p>
+            <div class ="account-detail-fields">
+              <input type="text" class="form-control" placeholder="PRE-POPULATED">
+              <input type="text" class="form-control margin-5" placeholder="PRE-POPULATED">
+            </div>
+          </div>
+        </div><!--Col-md-12 END-->
+      </div>
+            
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger pull-left">Delete</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+<!-- NEW Skill Modal -->
+<div class="modal fade bs-example-modal-lg" id="newSkillEntry" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Skill</h4>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12 margin-20">
+          <!--Side Panel Information-->
+          
+          <!--New Skill Entry-->
+          <div class="panel panel-default container-colour-blue-drop listing-tile user-skill-tiles">
+            <p class="san-serif-text-DGrey blue-headers">Add a New Skill</p>
+            <div class ="account-detail-fields">
+              <input type="text" class="form-control" placeholder="i.e. UX/UI Designer" id="skilltitle">
+            </div>
+            <p class="san-serif-text-DGrey">Skill Description</p>
+            <div class ="account-detail-fields">
+              <textarea class="form-control" rows="4" placeholder="i.e. What have you done OR do you do with this skill?" id="skilldesc"></textarea>
+            </div>
+            <p class="san-serif-text-DGrey">Provide up to 2 Portfolio links for this skill</p>
+            <div class ="account-detail-fields">
+              <input type="text" class="form-control" placeholder="i.e. http://www.example.com" id="skilllink1">
+              <input type="text" class="form-control margin-5" placeholder="i.e. http://www.example.com" id="skilllink2">
+            </div>
+          </div>
+        </div><!--Col-md-8 END-->
+      </div>
+      
+      <div class="modal-footer">
+        <!--Only those not previously entered-->
+        <button type="button" class="btn btn-primary" onclick="saveskills()">Save Skill</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div><!--Right Container col-md-9 End-->
+
+
+</div>
+
+
+
+
+    <script src="../assets/js/collapse.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/chart.js"></script>
+    <script src="../assets/js/toolkit.js"></script>
+    <script src="../assets/js/application.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+    <script src="../Facebook/firebase.js"></script>
+    
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      })
+      
+      $('#myCollapsible').collapse({
+        toggle: false
+      })
+    </script>
+  </body>
+</html>

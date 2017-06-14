@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Marcus Hahnheuser">
+
+    <title>
+
+        Account Creation
+
+    </title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Nunito+Sans:300,400,700,700i" rel="stylesheet">
+    <link href="../../assets/css/toolkit.css" rel="stylesheet">
+    <link href="../../assets/css/application.css" rel="stylesheet">
+
+    <link href="/assets/css/temp.css" rel="stylesheet">
+
+    <!--<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
+    <!--<script src="facebook/controller_facebook.js"></script>-->
+    <!--<script src="facebook/sdk.js"></script>-->
+    <!--<script src="facebook/model_facebook.js"></script>-->
+    <!--<script src="facebook/view_facebook.js"></script>-->
+    
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+        background-color: white;
+      }
+    </style>
+  </head>
+
+ <body>
+
+   <div class="growl" id="app-growl"></div>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top app-navbar">
+      <h4 class="intext-logo-white">Develup.co</h4>
+  </nav>
+  
+  <!--Left Profile info pannel -->
+  <div class="container p-t-md">
+    <div class="col-md-8 col-md-offset-2">
+<!--END Left Profile info pannel -->
+
+  <div class="nav-margin">
+        <p class="font-nunito-sans-title center-text nav-margin" style="margin-top: 3em; padding-bottom: 2em;">Hi <span id="displayname"></span>! Welcome to <span class="title-text-logo-blue">Develup.co</span> &#9995;</p>
+  </div>
+
+      <div class="panel panel-primary">
+        <div class="panel-body">
+        
+        <div>
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <p class="font-nunito-sans center-text signup-p"><span class="intext-logo-blue signup-p">Develup.co</span> was created to make entrepreneurship accessible to all. An all-in-one startup development platform, primed for early-stage startups, moonshot projects and first-time entrepreneurs. So, without further ado, let's get you started!</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="margin-20">
+              <img id="facebookprofilebig" src="../../assets/img/static/profplaceholder.png" alt="Blank Profile" class="img-circle center-block">
+        </div>
+        
+        <center>
+          <div class="row" style="margin-top: 10%">
+              <div class="dropdown">
+                <select class="custom-select account-detail-fields" id="dropdownselect">
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                  <option>Prefer not to say</option>
+                </select>
+              </div>
+          </div>
+          
+          <div class="row" style="margin-top: 2%">
+              <div class ="account-detail-fields">
+                <div class="input-group account-creation-fields">
+                  <input id="searchTextField" type="text" class="form-control" placeholder="Search for Location">
+                </div>
+              </div>
+          </div>
+        </center>
+        
+        <!-- Button trigger modal -->
+        <a href="../profile/index.html">
+        <button id="register" type="button" class="btn btn-primary btn-lg form-button" onclick="registeruser()">
+          Register
+        </button>
+        </a>
+        </div> 
+        </div>
+          
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/chart.js"></script>
+    <script src="../../assets/js/toolkit.js"></script>
+    <script src="../../assets/js/application.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+    <script src="../Facebook/firebase.js"></script>
+    
+    <script>
+
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      });
+
+    </script>
+
+  </body>
+</html>

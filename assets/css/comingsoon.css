@@ -1,0 +1,399 @@
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px){ 
+    
+    .image-responsive{
+        width: 400%;    
+        margin-left: -280% !important;
+    }
+    
+    .mainback h1{
+        font-size: 31px !important;
+        padding-top: 10%;
+    }
+    
+    .mainback{
+        height: 80vh !important;    
+    }
+    
+    .mainback p{
+        font-size: 16px !important;
+        width: 90vw;
+    }
+    .mainback .letmeknow{
+        text-align: center;
+    }
+    .mainback input{
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        position: absolute;
+    }
+    
+    .mainback button{
+        margin-left: 25%;
+        margin-top: 18%;
+    }
+    .mainback .hiddenphone{
+        display: none;
+    }
+    .mainback .announcement{
+        text-align: center;
+    }
+    .mac-screens{
+        display: none;
+    }
+    .icons-list-items{
+        opacity: 0.0 !important;
+    }
+    .hiddenfoot{
+        display: none;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    width: 100%;
+    height: auto;
+   /* background-image: url('/assets/img/coming soon/betabackground.png'); */
+    background-repeat: no-repeat; 
+    background-size: auto;
+    background-position: center center;
+}
+
+.slogan {
+    display: inline-block;
+    color: #009DFF;
+    font-size: 10pt;
+    margin-top: 1.28em;
+    margin-left: 1em;
+}
+
+.mac-screens {
+    z-index: 1;
+    margin-top: 2%;
+    right: 0;
+    width: 45%;
+    position: absolute;
+}
+
+.main-type-margin {
+    margin-top: 13.4%;
+}
+
+.left-margin {
+    margin-left: 4%;
+}
+
+.sub-text {
+    color: white;
+    font-size: 28pt;
+}
+
+.white-nav {
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   background-color: white;
+   height: 3.8em;
+   background-attachment: fixed;
+   z-index: 10;
+}
+
+.top-main-body {
+    width: 100%;
+    height: 100%;
+}
+
+.main-type-text {
+    margin-top: 40%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    
+}
+
+.img-logo {
+    width: 29px;
+    margin-left: -2em;
+    margin-right: -1em;
+    height: 29px;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14pt;
+    color: #009DFF;
+    margin-top: -0.03em;
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+.mid-form {
+    margin-top: 5em;
+}
+
+.email-input {
+    font-family: 'Nunito Sans', sans-serif;
+    width: 40% !important;
+    border: none;
+    padding: 0.8em 1em 0.8em 1em;
+    outline-style: none;
+    margin-top: 2%;
+    margin-left: 2%;
+}
+
+.name-input {
+    width: 30% !important;
+    margin-top: -30px !important;
+    font-size: 100%;
+}
+
+.email-input2 {
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 0.8em 1em 0.8em 1em;
+    border: none;
+    outline-style: none;
+}
+
+.submit-btn {
+    color: white;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 5px;
+    padding: 0.74em 2.4em 0.74em 2.4em;
+    background: none;
+    border: 1px solid white;
+    position: absolute;
+}
+
+.submit-btn-bottom {
+    color: white;
+    margin-left: 2.5%;
+    border-radius: 5px;
+    padding: 0.74em 2.4em 0.74em 2.4em;
+    background: none;
+    border: 1px solid white;
+}
+
+
+
+.submit-btn:hover {
+    background-color: white;
+    color: #009DFF;
+}
+
+
+.submit-btn-bottom:hover {
+    background-color: white;
+    color: #009DFF;
+}
+
+
+.strong-blue {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #009DFF;
+    font-weight: 600;
+}
+
+
+@keyframes pointer {
+    0% {top: -0.3em; width: 35px;}
+    25% {top: -0.15em; width: 35px;}
+    50% {top: 0em; width: 35px;}
+    75% {top: 0.15em; width: 35px;}
+    100% {top: 0.3em; width: 35px;}
+}
+
+.indicator {
+    z-index: 100;
+    position: absolute;
+    left: 49%;
+    margin-top: 51%;
+    width: 35px;
+    animation: pointer;
+    animation-duration: 0.4s;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.tiles {
+    background: white;
+    width: 20%;
+    height: 100%;
+    margin-top: 7em;
+    margin-bottom: 2em;
+    margin: 2em;
+    box-shadow: 0 3px 11px rgba(100,100,100,0.3);
+    
+}
+
+.tiles:hover {
+  -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+
+    -webkit-transition: transform 0.4s ease-in-out;
+    -moz-transition:transform 0.4s ease-in-out;
+    -ms-transition:transform 0.4s ease-in-out;
+}
+
+.announcement {
+    color: white;
+    font-size: 13pt;
+    margin-top: 34% !important;
+    position: absolute;
+}
+
+.tile-img {
+    padding-top: 3em;
+
+
+}
+
+.tile-text {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #009DFF;
+    font-size: 15pt;
+    
+}
+
+.second-section-text {
+    font-size: 18pt; 
+    margin-top: 2em;
+    color: white;
+}
+
+.footer-quote {
+    color: white;
+    margin-top: 2.4em;
+    line-height: 1.8em;
+    font-size: 13pt;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5em;
+}
+
+.icons-list {
+    display: inline;
+    position: absolute;
+    left: 93%;
+    top: -8em;
+
+}
+
+.icons-list-items {
+    list-style-type: none;
+    display: inline;
+}
+
+.icons {
+    width: 3.6em;
+    height: 3.6em;
+    margin-right: 1em;
+}
+
+.skill-icon1 {
+    animation: bounce1 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+.skill-icon2 {
+    animation: bounce1 2s;
+    animation-delay: 0.8s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+
+.skill-icon3 {
+    animation: bounce1 2s;
+    animation-delay: 1.4s;
+    animation-iteration-count: infinite;
+     animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+
+.skill-icon4 {
+    animation: bounce1 2s;
+    animation-delay: 1.9s;
+    animation-iteration-count: infinite;
+     animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+
+
+@keyframes bounce1 {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-40px);
+  }
+}
+
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-40px);
+  }
+}
+
+
+
+
+/* Chaning Gradient Background Animation */
+
+.gradient-background {
+    background: linear-gradient(270deg, #0076ff, #00d0ff);
+    background-size: 100%;
+    
+}
+
+#phpright{
+    color: #ffffff;
+    margin-top: 2%;
+    margin-left: 0%;
+}
+#phpwrong{
+    color: white;
+    margin-top: 2%;
+    margin-left: 0%;
+}

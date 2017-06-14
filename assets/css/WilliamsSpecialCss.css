@@ -1,0 +1,57 @@
+body{
+    background-color: #fff !important;
+}
+
+.sendlogoleft{
+   margin-left: -15vw !important;
+}
+
+.pushnavright li{
+    color: #fff !important;
+}
+
+.navbar-form input{
+    border: none;
+    width: 12vw !important;
+}
+
+.icon-magnifying-glass{
+    font-size: 16px;
+    color: #5D5D5D;
+}
+
+.williamsclear{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+}
+
+.morespacenav li{
+    padding-left: 20px;
+}
+
+.morespacenav .app-notifications .icon{
+    color: #fff !important;
+}
+
+.corecontent{
+    padding: 3%;
+}
+
+.corecontent .specialcard{
+    width: 21vw;
+    height: 80vh;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px #888888;
+    padding-left: 2%;
+    padding-top: 1%;
+}
+
+.corecontent .specialcard h1{
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}

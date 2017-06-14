@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      
+        CoFinder
+      
+    </title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="../assets/css/toolkit.css" rel="stylesheet">
+    
+    <link href="../assets/css/application.css" rel="stylesheet">
+    <link href="../assets/css/temp.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+        background: white;
+      }
+    </style>
+
+  </head>
+
+
+<body class="with-top-navbar">
+
+<div class="growl" id="app-growl"></div>
+    <nav class="navbar navbar-inverse navbar-fixed-top app-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand sendlogoleft" href="../index.html">
+            <img src="../assets/img/static/Develup.png" alt="brand">
+          </a>
+        </div>
+        <div class="navbar-collapse collapse pushnavright" id="navbar-collapse-main">
+          <ul class="nav navbar-nav hidden-md">
+            <li>
+              <a href="../home/index.html">Home</a>
+            </li>
+            <!-- My Profiles Dropdown menu -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiles <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="../profile/index.html">My Profile</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="../business-profile/index.html">Develup</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="#">+ Add a Startup!</a>
+                </li>
+              </ul>
+            </li>
+                      
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listings <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="../profile/index.html">Opportunities</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="../business-profile/index.html">CoFinder</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="../talent/index.html">Talent Pool</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="../cofinder/index.html">Manager</a>
+            </li>
+            <li>
+              <a href="../applicants/index.html">Resources</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav morespacenav navbar-right m-r-0 hidden-xs">
+            <li>
+              <p class="navbar-btn">
+                  <a href="#" class="btn btn-clear">Trial Premium</a>
+              </p>
+            </li>
+            <li>
+              <a class="app-notifications" href="../notifications/index.html">
+                <span class="icon icon-chat"></span>
+              </a>
+            </li>
+            <li>
+              <a class="app-notifications" href="../notifications/index.html">
+                <span class="icon icon-bell"></span>
+              </a>
+            </li>
+            <li>
+              <!-- Top right Profile Photo-->
+              <button class="btn btn-default navbar-btn navbar-btn-avitar" data-toggle="popover">
+                <img id="facebookprofile" class="img-circle" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">
+              </button>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right app-search" role="search">
+            <div class="form-group has-feedback">
+              <input type="text" class="form-control" placeholder="Search" data-action="grow">
+              <i class="glyphicon icon icon-magnifying-glass form-control-feedback"></i>
+            </div>
+          </form>
+          <ul class="nav navbar-nav hidden-sm hidden-md hidden-lg">
+            <li><a href="../home/index.html">Home</a></li>
+            <li><a href="../profile/index.html">Profile</a></li>
+            <li><a href="../startups/index.html">Startups</a></li>
+            <li><a href="../login/index.html">Settings</a></li>
+            <li onclick="logout()"><a href="#">Logout</a></li>
+          </ul>
+          <!--Mobile-->
+          <ul class="nav navbar-nav hidden">
+            <li><a href="../profile/index.html">Profile</a></li>
+            <li><a href="#">Give Feedback</a></li>
+            <li><a href="../startups/index.html">Startups</a></li>
+            <li><a href="#">Settings</a></li>
+            <li onclick="logout()"><a href="#">Logout</a></li>
+            <li><a href="../docs/index.html">Docs</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<!--Left Profile info pannel -->
+<div class="container p-t-md">
+  <div class="row">
+    <div class="col-md-3">
+<!--END Left Profile info pannel -->
+
+      <div class="panel panel-default container-colour-blue-drop visible-md-block visible-lg-block">
+        <div class="panel-body">
+          <form>
+            <strong><h4>Search Filters</h4></strong>
+            
+          <p>
+            <div class="form-group">
+              <label for="postsubcity">Keywords:</label>
+              <input type="text" class="form-control" id="keyword" placeholder="e.g Fintech">
+            </div>
+          </p>
+          <p>
+            <div class="form-group">
+              <label for="postsubcity">Location:</label>
+              <input type="text" class="form-control" id="postsubcity" placeholder="Enter a Post Code, Suburb or City">
+            </div>
+          </p>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#advancedfilters">
+              Advanced filters
+            </button>
+          </form>
+        </div>
+      </div>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="advancedfilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Advanced Search</h4>
+            </div>
+            
+            <div class="modal-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <h4 class="panel-title">
+                        Specialist in:
+                      </h4>
+                    </div>
+                          
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                      <div class="panel-body">
+                        <div class="form-group">
+                          <div class="col-md-6">
+                            <div class="checkbox">
+                              <label><input type="checkbox" value=""><img src="../assets/img/WebITSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Programimg</label>
+                            </div>
+                            <div class="checkbox">
+                              <label><input type="checkbox" value=""><img src="../assets/img/WebBusinessDevSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Business Development</label>
+                            </div>
+                            <div class="checkbox">
+                              <label><input type="checkbox" value=""><img src="../assets/img/WebDesignSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Digital Design</label>
+                            </div>
+                            <div class="checkbox">
+                              <label><input type="checkbox" value=""><img src="../assets/img/WebMarketingSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Marketing</label>
+                            </div>
+                            <div class="checkbox">
+                              <label><input type="checkbox" value=""><img src="../assets/img/WebAccountingSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Accounting & Finances</label>
+                            </div>
+                            <div class="checkbox">
+                              <label><input type="checkbox" value=""><img src="../assets/img/WebEngineeringSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Engineering & Design</label>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="checkbox">
+                              <label><input type="checkbox" value=""><img src="../assets/img/WebHealthSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Health</label>
+                            </div>
+                          <div class="checkbox">
+                            <label><input type="checkbox" value=""><img src="../assets/img/WebLegalSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Legal</label>
+                          </div>
+                          <div class="checkbox">
+                            <label><input type="checkbox" value=""><img src="../assets/img/WebMusicSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Sound Production</label>
+                          </div>
+                          <div class="checkbox">
+                            <label><input type="checkbox" value=""><img src="../assets/img/WebScienceSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Science</label>
+                          </div>
+                          <div class="checkbox">
+                            <label><input type="checkbox" value=""><img src="../assets/img/WebOtherSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Other</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">Filter 3</div>
+              <div class="col-md-3 col-md-offset-3">
+                <form action="">
+                  <input type="checkbox" name="filter3" value="filter3value"><br>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">Filter 4</div>
+              <div class="col-md-3 col-md-offset-3">
+                <form action="">
+                  <input type="checkbox" name="filter4" value="filter4value"><br>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-9">
+    <div class="feature-description">CoFinder</div>
+    
+    
+    
+    <div class="panel panel-default container-colour-blue-drop listing-tile">
+      <div class="panel-body">
+        <div class="col-md-2">
+          <img class="cofinderPP" src="../assets/img/Dylan.jpg"  alt="iKON Tracker Logo"> <a href="#"></a>
+        </div>
+        <div class="col-md-4">
+          <a href="#"><p class="talent-pool-ind-name">Dylan Birot</p></a>
+          <p class="talent-pool-location">Gold Coast, Australia</p>
+          <p class="talent-pool-specialty">Interested in: VR Startups</p>
+          <p class="cf-ls-skills">My Skills: 
+              <img src="../assets/img/WebITSubC.png" style="width:32px;height:32px;" alt="iKON Tracker Logo">
+              <img src="../assets/img/WebDesignSubC.png" style="width:32px;height:32px;" alt="iKON Tracker Logo">
+              <img src="/assets/img/WebMarketingSubC.png" style="width:32px;height:32px;" alt="iKON Tracker Logo">
+          </p>
+             
+          
+          <button type="submit" class="btn btn-default btn-width-fixed">Apply</button>
+          <!-- Single button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle btn-width-fixed" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Options <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Download CV</a></li>
+              <li><a href="#">Another action</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Save as Potential</a></li>
+            </ul>
+          </div>
+          <!-- Single button END-->
+        </div>
+        <div class="col-md-6">
+          <p class="cf-looking-for">Looking For: <img src="../assets/img/WebITSubC.png" style="width:35px;height:35px;" alt="WebIT"></p>
+          <p>I'm looking for a back-end dev cofounder! I need someone that has tons of experience working with the ionic 3 framework and Angular 4 to help me create a VR/AR social media platform that runs on iOS and Android.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="panel panel-default container-colour-blue-drop listing-tile">
+      <div class="panel-body">
+        <div class="col-md-2">
+          <img class="cofinderPP" src="../assets/img/Shanshan.jpg"  alt="iKON Tracker Logo"> <a href="#"></a>
+        </div>
+        <div class="col-md-4">
+          <a href="#"><p class="talent-pool-ind-name">Shanshan Xian</p></a>
+          <p class="talent-pool-location">Brisbane, Australia</p>
+          <p class="talent-pool-specialty">Interested in: VR Startups</p>
+          <p class="cf-ls-skills">My Skills: 
+              <img src="../assets/img/WebBusinessDevSubC.png" style="width:32px;height:32px;" alt="iKON Tracker Logo">
+              <img src="../assets/img/WebAccountingSubC.png" style="width:32px;height:32px;" alt="iKON Tracker Logo">
+              <img src="../assets/img/WebITSubC.png" style="width:32px;height:32px;" alt="iKON Tracker Logo">
+          </p>
+             
+          
+          <button type="submit" class="btn btn-default btn-width-fixed">Apply</button>
+          <!-- Single button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle btn-width-fixed" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Options <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="#">Download CV</a></li>
+              <li><a href="#">Another action</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Save as Potential</a></li>
+            </ul>
+          </div>
+          <!-- Single button END-->
+        </div>
+        <div class="col-md-6">
+          <p class="cf-looking-for">Looking For: <img src="../assets/img/WebScienceSubC.png" style="width:35px;height:35px;" alt="WebIT"></p>
+          <p>I'm looking for a scientist cofounder! I need someone whom is knowledgeable in chemistry to help me create safe to consume nootropic teas which will boost mental performance for students and entrepreneurs alike.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/chart.js"></script>
+    <script src="../assets/js/toolkit.js"></script>
+    <script src="../assets/js/application.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+    <script src="../Facebook/firebase.js"></script>
+    
+    
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      })
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div class="growl" id="app-growl"></div>-->
+
+<!--<nav class="navbar navbar-inverse navbar-fixed-top app-navbar">-->
+<!--  <div class="container">-->
+<!--    <div class="navbar-header">-->
+<!--      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">-->
+<!--        <span class="sr-only">Toggle navigation</span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--        <span class="icon-bar"></span>-->
+<!--      </button>-->
+<!--      <a class="navbar-brand" href="../index.php">-->
+<!--        <img src="../assets/img/static/Develup.png" alt="brand">-->
+<!--      </a>-->
+<!--    </div>-->
+<!--    <div class="navbar-collapse collapse" id="navbar-collapse-main">-->
+
+<!--        <ul class="nav navbar-nav hidden-xs">-->
+<!--          <li>-->
+<!--            <a href="index.html">Home</a>-->
+<!--          </li>-->
+          
+<!--          <li class="dropdown">-->
+<!--            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiles <span class="caret"></span></a>-->
+<!--            <ul class="dropdown-menu">-->
+<!--              <li><a href="../profile/index.html">My Profile</a></li>-->
+<!--              <li role="separator" class="divider"></li>-->
+<!--              <li><a href="../business-profile/index.html">Develup</a></li>-->
+<!--              <li role="separator" class="divider"></li>-->
+<!--              <li><a href="#">+ Add a Startup!</a></li>-->
+<!--            </ul>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="../startups/index.html">Startups</a>-->
+<!--          </li>-->
+<!--          <li class="active">-->
+<!--            <a href="../cofinder/index.html">CoFinder</a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="../applicants/index.html">Applicant Pool</a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="../talent/index.html">Talent Pool</a>-->
+<!--          </li>-->
+<!--        </ul>-->
+
+<!--        <ul class="nav navbar-nav navbar-right m-r-0 hidden-xs">-->
+<!--          <li >-->
+<!--            <a class="app-notifications" href="../notifications/index.html">-->
+<!--              <span class="icon icon-bell"></span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          <li>-->
+            <!-- Top right Profile Photo-->
+<!--            <button class="btn btn-default navbar-btn navbar-btn-avitar" data-toggle="popover">-->
+<!--              <img id="facebookprofile" class="img-circle" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">-->
+<!--            </button>-->
+<!--          </li>-->
+<!--        </ul>-->
+
+<!--        <form class="navbar-form navbar-right app-search" role="search">-->
+<!--          <div class="form-group">-->
+<!--            <input type="text" class="form-control" data-action="grow" placeholder="Search">-->
+<!--          </div>-->
+<!--        </form>-->
+
+        <!--Navbar for mobile-->
+<!--        <ul class="nav navbar-nav hidden-sm hidden-md hidden-lg">-->
+<!--          <li><a href="index.php">Home</a></li>-->
+<!--          <li class="dropdown">-->
+<!--            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiles <span class="caret"></span></a>-->
+<!--            <ul class="dropdown-menu">-->
+<!--              <li><a href="../profile/index.php">My Profile</a></li>-->
+<!--              <li role="separator" class="divider"></li>-->
+<!--              <li><a href="../business-profile/index.php">Develup</a></li>-->
+<!--              <li role="separator" class="divider"></li>-->
+<!--              <li><a href="#">+ Add a Startup!</a></li>-->
+<!--            </ul>-->
+<!--          </li>-->
+<!--          <li><a href="../startups/index.php">Startups</a></li>-->
+<!--          <li><a href="../cofinder/index.php">CoFinder</a></li>-->
+<!--          <li><a href="../applicants/index.php">Applicant Pool</a></li>-->
+<!--          <li><a href="../talent/index.php">Talent Pool</a></li>-->
+<!--          <li><a href="../login/index.html">Feedback</a></li>-->
+<!--          <li><a href="../login/index.html">Settings</a></li>-->
+<!--          <li onclick="logout()"><a href="#">Logout</a></li>-->
+<!--        </ul>-->
+        
+        <!--Navbar for photo dropdown-->
+<!--        <ul class="nav navbar-nav hidden">-->
+<!--          <li><a href="../profile/index.php">Profile</a></li>-->
+<!--          <li><a href="../login/index.html">Feedback</a></li>-->
+<!--          <li><a href="../login/index.html">Settings</a></li>-->
+<!--          <li onclick="logout()"><a href="#">Logout</a></li>-->
+<!--          <li><a href="../docs/index.html">Docs</a></li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--  </div>-->
+<!--</nav>-->
+
+
+<!--Left Profile info pannel -->
+<!--<div class="container p-t-md">-->
+<!--  <div class="row">-->
+<!--    <div class="col-md-3">-->
+<!--END Left Profile info pannel -->
+
+<!--      <div class="panel panel-default visible-md-block visible-lg-block">-->
+<!--        <div class="panel-body">-->
+<!--          <form>-->
+<!--            <strong><h4>Search Filters</h4></strong>-->
+            
+<!--          <p>-->
+<!--            <div class="form-group">-->
+<!--              <label for="postsubcity">Keywords:</label>-->
+<!--              <input type="text" class="form-control" id="keyword" placeholder="e.g Fintech">-->
+<!--            </div>-->
+<!--          </p>-->
+<!--          <p>-->
+<!--            <div class="form-group">-->
+<!--              <label for="postsubcity">Location:</label>-->
+<!--              <input type="text" class="form-control" id="postsubcity" placeholder="Enter a Post Code, Suburb or City">-->
+<!--            </div>-->
+<!--          </p>-->
+            <!-- Button trigger modal -->
+<!--            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#advancedfilters">-->
+<!--              Advanced filters-->
+<!--            </button>-->
+            <!--Button to search new filter-->
+<!--            <div class="pull-right">-->
+<!--                  <button type="button" class="btn btn-primary btn-sm">Refresh</button>-->
+<!--            </div>-->
+<!--          </form>-->
+<!--        </div>-->
+<!--      </div>-->
+      
+      <!-- Modal -->
+<!--      <div class="modal fade" id="advancedfilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">-->
+<!--        <div class="modal-dialog" role="document">-->
+<!--          <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+<!--              <h4 class="modal-title" id="myModalLabel">Advanced Search</h4>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+                
+<!--            <div class="row">-->
+<!--                <div class="col-md-12">-->
+<!--                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">-->
+<!--                        <div class="panel panel-default">-->
+<!--                            <div class="panel-heading" role="tab" id="headingOne">-->
+<!--                            <h4 class="panel-title">-->
+<!--                                Specialist in:-->
+<!--                            </h4>-->
+<!--                            </div>-->
+                          
+<!--                              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">-->
+<!--                                <div class="panel-body">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="col-md-6">-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label><input type="checkbox" value=""><img src="../assets/img/WebITSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Programimg</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label><input type="checkbox" value=""><img src="../assets/img/WebBusinessDevSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Business Development</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label><input type="checkbox" value=""><img src="../assets/img/WebDesignSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Digital Design</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label><input type="checkbox" value=""><img src="../assets/img/WebMarketingSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Marketing</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label><input type="checkbox" value=""><img src="../assets/img/WebAccountingSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Accounting & Finances</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label><input type="checkbox" value=""><img src="../assets/img/WebEngineeringSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Engineering & Design</label>-->
+<!--                                        </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-md-6">-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label><input type="checkbox" value=""><img src="../assets/img/WebHealthSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Health</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label><input type="checkbox" value=""><img src="../assets/img/WebLegalSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Legal</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label><input type="checkbox" value=""><img src="../assets/img/WebMusicSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Sound Production</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label><input type="checkbox" value=""><img src="../assets/img/WebScienceSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Science</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="checkbox">-->
+<!--                                            <label><input type="checkbox" value=""><img src="../assets/img/WebOtherSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">Other</label>-->
+<!--                                        </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-3">Filter 3</div>-->
+<!--                <div class="col-md-3 col-md-offset-3">-->
+<!--                    <form action="">-->
+<!--                        <input type="checkbox" name="filter3" value="filter3value"><br>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-3">Filter 4</div>-->
+<!--                <div class="col-md-3 col-md-offset-3">-->
+<!--                    <form action="">-->
+<!--                        <input type="checkbox" name="filter4" value="filter4value"><br>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="modal-footer">-->
+<!--            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+<!--            <button type="button" class="btn btn-primary">Save changes</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</div>-->
+
+
+
+<!--      <div class="panel panel-default m-b-md hidden-xs">-->
+<!--        <div class="panel-body">-->
+<!--            <h5 class="m-t-0">Sponsored</h5>-->
+<!--          <div data-grid="images" data-target-height="150">-->
+<!--            <a href="#">-->
+<!--              <img class="media-object" data-width="640" data-height="640" src="../assets/img/advertisement/defaultad.png">-->
+<!--            </a>-->
+<!--          </div>-->
+<!--          <p><strong>Sponsored link</strong> What are you waiting for?</p>-->
+<!--          <button class="btn btn-primary-outline btn-sm">Link Here</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--Listing of Startups-->
+
+<!--<div class="col-md-9">-->
+<!--  <h2 class="media-heading"><strong>Available Projects</strong></h2>-->
+<!--  <div class="panel panel-primary">-->
+
+<!--    <table class="table">-->
+<!--      <tr>-->
+<!--        <td>-->
+<!--          <div class="panel-body">-->
+<!--            <div class="col-md-2">-->
+<!--              <img class="cofinderPP" src="../assets/img/Diamondlogo.png"  alt="iKON Tracker Logo"> <a href="#"></a>-->
+<!--            </div>-->
+<!--            <div class="col-md-5">  -->
+<!--              <ul class="list-unstyled">-->
+<!--                <li><h4>-->
+<!--                    <li>PHP & MySQL Manager</li>-->
+<!--                </h4></li>-->
+<!--                <a href="../profile/index.php">Develup</a>-->
+<!--                <li><span class="text-muted icon icon-location-pin m-r"></span>Location: <a href="#">Brisbane</a></li>-->
+<!--              </ul>-->
+<!--              <button type="submit" class="btn btn-primary">Express your Interests</button>-->
+<!--            </div>  -->
+            
+<!--             <div class="col-md-5">-->
+<!--              <ul class="list-unstyled">-->
+<!--                <li><h4><strong>Looking For: </strong>-->
+<!--                  <img src="../assets/img/WebITSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">-->
+<!--                </li></h4> -->
+              
+              <!--Word limit in the PHP creation to ensure containers dont overflow.-->
+<!--              <li>-->
+<!--              Develup is a Platform for entrepreneurial leaders to create change and drive innovation. We are currently looking for a PHP developer who has a well rounded knowledge in MYSQL integration.-->
+<!--              </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>-->
+<!--          <div class="panel-body">-->
+<!--            <div class="col-md-2">-->
+<!--              <img class="cofinderPP" src="../assets/img/Dylan.jpg"  alt="iKON Tracker Logo"> <a href="#"></a>-->
+<!--            </div>-->
+<!--            <div class="col-md-5">  -->
+<!--              <ul class="list-unstyled">-->
+<!--                <li><h4>-->
+<!--                    <a href="../profile/index.php">Dylan Birot</a>-->
+<!--                </h4></li>-->
+<!--                <li>Drone Delivery service Startup.</li>-->
+<!--                <li><span class="text-muted icon icon-location-pin m-r"></span>Location: <a href="#">Gold Coast</a></li>-->
+<!--              </ul>-->
+<!--              <button type="submit" class="btn btn-primary">Express your Interests</button>-->
+<!--            </div>  -->
+            
+<!--             <div class="col-md-5">-->
+<!--              <ul class="list-unstyled">-->
+<!--                <li><h4><strong>Looking For: </strong>-->
+<!--                  <img src="../assets/img/WebITSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">-->
+<!--                </li></h4> -->
+              
+              <!--Word limit in the PHP creation to ensure containers dont overflow.-->
+<!--              <li>-->
+<!--              I am looking for someone who has several years of experience in the database programming industry to help me take on this new venture. -->
+<!--              </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </td>-->
+<!--      </tr>-->
+      
+<!--        <tr>-->
+<!--        <td>-->
+<!--          <div class="panel-body">-->
+<!--            <div class="col-md-2">-->
+<!--              <img class="cofinderPP" src="../assets/img/marcus.jpg"  alt="iKON Tracker Logo"> <a href="#"></a>-->
+<!--            </div>-->
+<!--            <div class="col-md-5">  -->
+<!--              <ul class="list-unstyled">-->
+<!--                <li><h4>-->
+<!--                    <a href="../profile/index.php">Marcus Hahnheuser</a>-->
+<!--                </h4></li>-->
+<!--                <li>Security Software Startup</li>-->
+<!--                <li><span class="text-muted icon icon-location-pin m-r"></span>Location: <a href="#">Brisbane</a></li>-->
+<!--              </ul>-->
+<!--              <button type="submit" class="btn btn-primary">Express your Interests</button>-->
+<!--            </div>-->
+            
+<!--             <div class="col-md-4">-->
+<!--              <ul class="list-unstyled">-->
+<!--                <li><h4><strong>Looking For: </strong>-->
+<!--                  <img src="../assets/img/WebAccountingSubC.png" style="width:30px;height:30px;" alt="iKON Tracker Logo">-->
+<!--                </li></h4> -->
+              
+              <!--Word limit in the PHP creation to ensure containers dont overflow.-->
+<!--              <li>-->
+<!--              Looking for a talented and creative digital designer and an accountant to be my cofounders for my business idea.-->
+<!--              </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--    </table>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--    <script src="../assets/js/jquery.min.js"></script>-->
+<!--    <script src="../assets/js/chart.js"></script>-->
+<!--    <script src="../assets/js/toolkit.js"></script>-->
+<!--    <script src="../assets/js/application.js"></script>-->
+    
+<!--    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>-->
+<!--    <script src="../Facebook/firebase.js"></script>-->
+<!--    <script>-->
+    <!--  // execute/clear BS loaders for docs-->
+    <!--  $(function(){-->
+    <!--    if (window.BS&&window.BS.loader&&window.BS.loader.length) {-->
+    <!--      while(BS.loader.length){(BS.loader.pop())()}-->
+    <!--    }-->
+    <!--  })-->
+    <!--</script>-->
+    
+    
+  </body>
+</html>

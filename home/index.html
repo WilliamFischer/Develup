@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" data-title='home'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      
+        Home
+      
+    </title>
+    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="../assets/css/toolkit.css" rel="stylesheet">
+    
+    <!--- Google Materials.io Link -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../assets/css/application.css" rel="stylesheet">
+    <link href="../assets/css/temp.css" rel="stylesheet">
+    <link href="../assets/css/custom.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Michroma' rel='stylesheet'>
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+        background: white;
+      }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="../assets/facebook/sdk.js"></script>
+    <script src="../assets/facebook/controller.js"></script>
+    <script src="../assets/facebook/functions.js"></script>
+
+  </head>
+
+<body class="with-top-navbar">
+
+<div class="growl" id="app-growl"></div>
+
+<nav class="navbar navbar-inverse navbar-fixed-top app-navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand sendlogoleft" href="../index.html">
+            <img src="../assets/img/static/Develup.png" alt="brand">
+          </a>
+        </div>
+        <div class="navbar-collapse collapse pushnavright" id="navbar-collapse-main">
+          <ul class="nav navbar-nav hidden-md">
+            <li>
+              <a href="../home/index.html">Home</a>
+            </li>
+            <!-- My Profiles Dropdown menu -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profiles <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="../profile/index.html">My Profile</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="../business-profile/index.html">Develup</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="#">+ Add a Startup!</a>
+                </li>
+              </ul>
+            </li>
+                      
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listings <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="../profile/index.html">Opportunities</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="../business-profile/index.html">CoFinder</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="../talent/index.html">Talent Pool</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="../cofinder/index.html">Manager</a>
+            </li>
+            <li>
+              <a href="../applicants/index.html">Resources</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav morespacenav navbar-right m-r-0 hidden-xs">
+            <li>
+              <p class="navbar-btn">
+                  <a href="#" class="btn btn-clear">Trial Premium</a>
+              </p>
+            </li>
+            <li>
+              <a class="app-notifications" href="../notifications/index.html">
+                <span class="icon icon-chat"></span>
+              </a>
+            </li>
+            <li>
+              <a class="app-notifications" href="../notifications/index.html">
+                <span class="icon icon-bell"></span>
+              </a>
+            </li>
+            <li>
+              <!-- Top right Profile Photo-->
+              <button class="btn btn-default navbar-btn navbar-btn-avitar" data-toggle="popover">
+                <img id="facebookprofile" class="img-circle" src="http://shashgrewal.com/wp-content/uploads/2015/05/default-placeholder.png">
+              </button>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right app-search" role="search">
+            <div class="form-group has-feedback">
+              <input type="text" class="form-control" placeholder="Search" data-action="grow">
+              <i class="glyphicon icon icon-magnifying-glass form-control-feedback"></i>
+            </div>
+          </form>
+          <ul class="nav navbar-nav hidden-sm hidden-md hidden-lg">
+            <li><a href="../home/index.html">Home</a></li>
+            <li><a href="../profile/index.html">Profile</a></li>
+            <li><a href="../startups/index.html">Startups</a></li>
+            <li><a href="../login/index.html">Settings</a></li>
+            <li onclick="logout()"><a href="#">Logout</a></li>
+          </ul>
+          <!--Mobile-->
+          <ul class="nav navbar-nav hidden">
+            <li><a href="../profile/index.html">Profile</a></li>
+            <li><a href="#">Give Feedback</a></li>
+            <li><a href="../startups/index.html">Startups</a></li>
+            <li><a href="#">Settings</a></li>
+            <li onclick="logout()"><a href="#">Logout</a></li>
+            <li><a href="../docs/index.html">Docs</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+<div class="profile-header1">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+  
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="../assets/img/slideshow/devyournetwork.png" alt="Develup your network">
+        <div class="carousel-caption">
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/img/slideshow/devyourproduct.png" alt="Develup your product">
+        <div class="carousel-caption">
+        </div>
+      </div>
+      <div class="item">
+        <img src="../assets/img/slideshow/devyourstartup.png" alt="Develup your startup">
+        <div class="carousel-caption">
+        </div>
+      </div>
+    </div>
+  
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+
+
+<!--Listing of Startups-->
+<div class="headerBg">
+  <div class="container-fluid">
+    <div class="col-lg-12">
+      <div class="col-md-offset-1 col-md-3">
+        <div class="input-group">1. What industry would you like to search? 
+          <input type="text" class="form-control" placeholder="Enter Keyword">
+        </div><!-- /input-group -->
+      </div>
+      
+      
+      <div class="col-md-3">
+        <div class="input-group">2. What is your prefered location?
+          <input type="text" class="form-control" placeholder="Enter Suburb, city or Region">
+        </div><!-- /input-group -->
+      </div>
+    
+      <div class="col-md-2">3. Whats your speciality
+        <select class="custom-select">
+          <option>All</option>
+          <option>Programming</option>
+          <option>Business Development</option>
+          <option>Digital Design</option>
+          <option>Marketing</option>
+          <option>Accounting & Finances</option>
+          <option>Engineering & Design</option>
+          <option>Health</option>
+          <option>Legal</option>
+          <option>Sound Production</option>
+          <option>Science</option>
+          <option>Other</option>
+        </select>
+      </div>
+      
+      <div class="col-md-1">Let's Go!
+        <a href="../startups/index.php">
+          <button type="button" class="btn btn-success" style="width: 5em;">Search</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container lead">
+  <h3 class="text-center">Check out our Latest Blog Articles</h2>
+  <p class="col-md-8 col-md-offset-2 text-center">Part of being an entrepreneur is to work everyday to be better than who you were yesterday.
+Check out our top reads for this week!</p>
+</div>
+
+<div class="home-blog-cards center-block">
+<div class="wrapper center-block">
+    		
+    		<div class="card radius shadowDepth1">
+    			<div class="card__image border-tlr-radius">
+    				<img src="/assets/img/Discussion.JPG" alt="image" class="border-tlr-radius">
+                </div>
+
+    			<div class="card__content card__padding">
+                    <div class="card__share">
+                        <div class="card__social">  
+                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                        </div>
+
+                        <a id="share" class="share-toggle share-icon" href="#"></a>
+                    </div>
+
+    				<div class="card__meta">
+    					<a href="#">Tech Startups</a>
+                        <time>2nd June</time>
+    				</div>
+
+    				<article class="card__article">
+	    				<h3><a href="#">How Startups are using IBM's Watson API</a></h3>
+
+	    				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+	    			</article>
+    			</div>
+
+    			<div class="card__action">
+    				
+    				<div class="card__author">
+    					<img src="/assets/img/develuplogowhite.png" width="40px" alt="user">
+    					<div class="card__author-content">
+    						By <a href="#">Develup Team</a>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	
+    		
+    		<div class="card radius shadowDepth1">
+    			<div class="card__image border-tlr-radius">
+    				<img src="/assets/img/Discussion.JPG" alt="image" class="border-tlr-radius">
+                </div>
+
+    			<div class="card__content card__padding">
+                    <div class="card__share">
+                        <div class="card__social">  
+                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                        </div>
+
+                        <a id="share" class="share-toggle share-icon" href="#"></a>
+                    </div>
+
+    				<div class="card__meta">
+    					<a href="#">Tech Startups</a>
+                        <time>2nd June</time>
+    				</div>
+
+    				<article class="card__article">
+	    				<h3><a href="#">How Startups are using IBM's Watson API</a></h3>
+
+	    				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+	    			</article>
+    			</div>
+
+    			<div class="card__action">
+    				
+    				<div class="card__author">
+    					<img src="/assets/img/develuplogowhite.png" width="40px" alt="user">
+    					<div class="card__author-content">
+    						By <a href="#">Develup Team</a>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	
+    		
+    		<div class="card radius shadowDepth1">
+    			<div class="card__image border-tlr-radius">
+    				<img src="/assets/img/Discussion.JPG" alt="image" class="border-tlr-radius">
+                </div>
+
+    			<div class="card__content card__padding">
+                    <div class="card__share">
+                        <div class="card__social">  
+                            <a class="share-icon facebook" href="#"><span class="fa fa-facebook"></span></a>
+                            <a class="share-icon twitter" href="#"><span class="fa fa-twitter"></span></a>
+                            <a class="share-icon googleplus" href="#"><span class="fa fa-google-plus"></span></a>
+                        </div>
+
+                        <a id="share" class="share-toggle share-icon" href="#"></a>
+                    </div>
+
+    				<div class="card__meta">
+    					<a href="#">Tech Startups</a>
+                        <time>2nd June</time>
+    				</div>
+
+    				<article class="card__article">
+	    				<h3><a href="#">How Startups are using IBM's Watson API</a></h3>
+
+	    				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+	    			</article>
+    			</div>
+
+    			<div class="card__action">
+    				
+    				<div class="card__author">
+    					<img src="/assets/img/develuplogowhite.png" width="40px" alt="user">
+    					<div class="card__author-content">
+    						By <a href="#">Develup Team</a>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    </div>
+  </div>
+  
+  <button class="btn btn-primary blog-btn">Visit Blog</button>
+
+<hr id="home-hr" width="80%">
+
+
+
+<div class="container lead">
+  <h3 class="text-center">Feedback</h3>
+  <p class="lead text-center">We are always improving! Have an idea to help make Develup better? Let us know below!</p>
+</div>
+<form class="form-horizontal">
+  <div class="form-group">
+    <div class="col-md-6 col-md-offset-3">
+      <textarea class="form-control" rows="4" placeholder="Provide Feedback Here:"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+      <button type="submit" class="btn btn-primary text-center feedback-sub-btn">Submit</button>
+  </div>
+</form>
+
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/chart.js"></script>
+    <script src="../assets/js/toolkit.js"></script>
+    <script src="../assets/js/application.js"></script>
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+    <script src="../Facebook/firebase.js"></script>
+    
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      });
+      
+      
+      $(document).ready(function($) {
+
+	$('.card__share > a').on('click', function(e){ 
+		e.preventDefault() // prevent default action - hash doesn't appear in url
+   		$(this).parent().find( 'div' ).toggleClass( 'card__social--active' );
+		$(this).toggleClass('share-expanded');
+    });
+  
+});
+      
+    </script>
+
+  </body>
+</html>

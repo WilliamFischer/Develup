@@ -1,0 +1,1392 @@
+/* ########## Common Styles ###########
+            COLOURS
+            Blue = #009DFF
+            Dark Gray = #5D5D5D
+            
+            FONTS
+            Montserrat
+            Nunito Sans
+            Open Sans
+*/
+
+
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
+
+
+/* Global Style Rules Starts Here */
+
+/* Font library */
+.opensans-text-blue-bold {
+    color: #009DFF;
+    font-family: 'Open Sans';
+    font-weight: bold;
+}
+.opensans-text-DGrey-bold {
+    color: #5D5D5D;
+    font-family: 'Open Sans';
+    font-weight: bold;
+}
+.opensans-text-black-bold {
+    font-family: 'Open Sans';
+    font-weight: bold;
+}
+
+.san-serif-text-blue {
+    font-family: "Nunito Sans", sans-serif;
+    color: #009DFF;
+}
+.san-serif-text-DGrey {
+    font-family: "Nunito Sans", sans-serif;
+    color: #5D5D5D;
+}
+.san-serif-text-black {
+    font-family: "Nunito Sans", sans-serif;
+}
+.san-serif-text-blue-center {
+    font-family: "Nunito Sans", sans-serif;
+    color: #009DFF;
+    text-align: center;
+}
+.san-serif-text-DGrey-center {
+    font-family: "Nunito Sans", sans-serif;
+    color: #5D5D5D;
+    text-align: center;
+}
+.san-serif-text-black-center {
+    font-family: "Nunito Sans", sans-serif;
+    text-align: center;
+}
+
+.blue-headers {
+    font-weight: 400;
+    font-size: 15pt;
+    color: #009DFF;
+}
+
+
+/* END Font library */
+
+
+.material-icons.md-blue { color: #009DFF; }
+.material-icons.md-white { color: white; }
+.material-icons.md-30 { font-size: 30px; }
+
+
+.edit-icon { padding-right: 0.5em;  }
+
+.grey-opensans{
+    color: #5D5D5D;
+    font-family: 'Open Sans';
+    font-weight: bold;
+}
+
+.basic-grey{
+    color: #5D5D5D;
+}
+
+.grey-opensans{
+    color: #5D5D5D;
+    font-family: 'Open Sans';
+    font-weight: bold;
+}
+
+.talent-pool-ind-name {
+    margin-top: 22px;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 13pt;
+    font-weight: 600;
+    color: #009DFF;
+}
+
+
+.talent-pool-location {
+    font-family: "Nunito Sans", sans-serif;
+    color: #009DFF;
+    margin-top: -8px;
+}
+
+.talent-pool-specialty {
+    font-family: "Nunito Sans", sans-serif;
+    color: #5D5D5D;
+    margin-top: -2px;
+    margin-bottom: 2em;
+}
+
+.talent-pool-skills {
+    font-family: "Montserrat", sans-serif;
+    color: #5D5D5D;
+    margin-top: 8px;
+}
+
+.tp-skills {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-bottom: 0.8em;
+    color: #5d5d5d;
+    font-size: 12pt;
+    position: relative;
+    bottom: 0.64em;
+    margin-top: 1.6em;
+}
+
+.font-nunito-sans-title {
+    font-size: 14pt;
+    font-family: 'Nunito Sans';
+    color: #5d5d5d;
+    font-weight: 300;
+}
+
+.small-header-font {
+    font-family: "Nunito Sans";
+    font-weight: 200;
+    color: #5D5D5D;
+    font-size: 8pt;
+    text-align: center;
+}
+
+.main-container {
+    border: 1px solid #009DFF;
+}
+
+.intext-logo-white {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14pt;
+    font-weight: 600;
+    color: white;
+}
+
+.title-text-logo-blue {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14pt;
+    font-weight: 500;
+    color: #009DFF;
+}
+
+.feature-description {
+    margin-left: 5px;
+    margin-bottom: 0.8em;
+    text-align: left;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 15pt;
+    font-weight: 400;
+    color: #5d5d5d;
+}
+
+.title-text-logo-blue-left {
+    margin-top:10px;
+    margin-left: 10px;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14pt;
+    font-weight: 500;
+    color: #009DFF;
+}
+
+.intext-logo-blue {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: #009DFF;
+}
+
+.text-shadow {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 2px 2px #9e9e9e;
+}
+
+.nav-margin {
+    margin-top: 50px;
+}
+.margin-5 {
+    margin-top: 5px;
+}
+.margin-10 {
+    margin-top: 10px;
+}
+.margin-15 {
+    margin-top: 15px;
+}
+.margin-20 {
+    margin-top: 20px;
+}
+.margin-25 {
+    margin-top: 25px;
+}
+.margin-30 {
+    margin-top: 30px;
+}
+.margin-40 {
+    margin-top: 40px;
+}
+.margin-45 {
+    margin-top: 45px;
+}
+.margin-90 {
+    margin-top: 94px;
+}
+
+.margin-L-5 {
+    margin-left: 5px;
+}
+.margin-L-10 {
+    margin-left: 10px;
+}
+.margin-L-15 {
+    margin-left: 15px;
+}
+
+.center-button {
+    font-size: 10pt;
+    display: block;
+    margin: auto;
+    margin-bottom: 0;
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    border: none;   
+    height: 40px;
+    width: 150px;
+}
+
+.container-colour-blue-drop {
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.listing-tile {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16) !important;
+}
+
+.profile-small {
+    height: 20;
+    width: 20%;
+    margin-right: 15px;
+}
+
+.font-nunito-sans {
+    font-size: 10pt;
+    font-family: 'Nunito Sans';
+    color: #5d5d5d;
+    font-weight: 200;
+}
+
+.font-nunito-sans-footer {
+    margin-top: 1.8em;
+    font-size: 10.5pt;
+    font-family: 'Nunito Sans';
+    color: #5d5d5d;
+    font-weight: 200;
+}
+
+.copyright {
+    bottom: 0;
+    padding-top: 3em;
+}
+
+/* Global Style Rules Ends Here */
+
+/* ********************************************************************************************************** */
+
+/* Landing Page CSS Starts Here*/
+
+
+
+
+
+
+
+/* About Page CSS Starts Here*/
+
+.about-bg {
+    background: url('/assets/img/pageBG/coder.jpg');
+    width: 100%;
+    max-height: 50%;
+    min-height: 30%;
+    padding-bottom: 10%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1000;
+}
+
+.header-title {
+    font-family: 'Montserrat';
+    color: white;
+    text-align: center;
+    font-size: 30pt;
+}
+
+.header-sub {
+    font-size: 16pt;
+    color: white;
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.header-text-div{
+    margin: auto;
+    margin-top: 10%;
+
+}
+
+.about-middle-sec {
+    z-index: 100;
+    background-color: white;
+    height: auto;
+    width: 100%;
+    
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.about-mid-text {
+    font-family: 'Nunito Sans';
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-top: 3%;
+    
+    
+}
+.about-mid-bg {
+    background-image: url('/assets/img/pageBG/DevelupStartup.png');
+    width: 100%;
+    padding-bottom: 30%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* Signup CSS Starts Here */
+
+
+#call-to-action {
+    border: 1.5px solid white; 
+    margin-top: 8px; 
+    padding-left: 26px; 
+    padding-right: 26px; 
+    margin-left: 20px;
+}
+
+#header-slogan {
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    color: white;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+#header-logo {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 20pt;
+}
+
+
+#blankprofile{
+    height: 125px;
+    width: 125px;
+}
+
+/*Home Landing page form*/
+.landing-form {
+    padding-left: 20px;
+    font-size: 10pt;
+    display: block;
+    margin: auto;
+    border-radius: 4px;
+    margin-top: 25px;
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    border: none;
+    height: 40px;
+    width: 300px;
+}
+
+.form-button {
+    padding-left: 20px;
+    font-size: 10pt;
+    display: block;
+    margin: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    border: none;   
+    height: 40px;
+    width: 300px;
+}
+
+.account-detail-fields {
+    margin-bottom: 10px;
+}
+
+
+.account-creation-fields {
+    font-size: 10pt;
+    display: block;
+    margin: auto;
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    border: none;
+    height: 40px;
+    width: 300px;
+}
+
+.short-entry-fields {
+    font-size: 10pt;
+    display: block;
+    margin: auto;
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    border: none;
+    height: 40px;
+    width: 50%;
+}
+
+.long-entry-fields {
+    font-size: 10pt;
+    display: block;
+    margin: auto;
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    border: none;
+    width: 80%;
+}
+
+/* Signup form CSS Ends Here */
+
+/* ********************************************************************************************************** */
+
+
+/* Account Select CSS Starts Here */
+
+#account-select-list {
+    margin-top: 10px;
+    list-style-type: circle;
+
+}
+
+.image-upload > input
+{
+    display: none;
+}
+
+/* From Williams css*/
+.morespacenav li{
+    padding-left: 20px;
+}
+
+.morespacenav .app-notifications .icon{
+    color: #fff !important;
+}
+
+.btn-clear{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+}
+
+
+.btn-clear:hover{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #e5e5e5;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+}
+
+.btn-width-fixed {
+    width: 100px;
+    border: solid 1px;
+    border-color: #009DFF;
+}
+
+.btn-width-fixed-nav {
+    width: 160px;
+    border: solid 1px;
+    border-color: #009DFF;
+}
+
+
+
+/*Profile Banner*/
+.margin-drop {
+    margin-top:20px;
+}
+
+/*END Profile Banner*//* 
+
+Blue = #009DFF
+Dark Gray = #5D5D5D
+
+*/
+
+
+/* Global Style Rules Starts Here */
+
+.emoji {
+    font-size: 14pt;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.font-nunito-sans-title {
+    font-size: 14pt;
+    font-family: 'Nunito Sans';
+    color: #5d5d5d;
+    font-weight: 300;
+}
+
+.main-container {
+    border: 1px solid #009DFF;
+}
+
+.small-header-font {
+    font-family: "Nunito Sans";
+    font-weight: 200;
+    color: #5D5D5D;
+    font-size: 8pt;
+    text-align: center;
+}
+
+.intext-logo-white {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14pt;
+    font-weight: 600;
+    color: white;
+}
+
+.title-text-logo-blue {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14pt;
+    font-weight: 500;
+    color: #009DFF;
+}
+
+.title-text-logo-blue-left {
+    margin-top:10px;
+    margin-left: 10px;
+    text-align: left;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14pt;
+    font-weight: 500;
+    color: #009DFF;
+}
+
+.intext-logo-blue {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 10pt;
+    font-weight: 500;
+    color: #009DFF;
+}
+
+.text-shadow {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 2px 2px #9e9e9e;
+}
+
+.nav-margin {
+    margin-top: 50px;
+}
+
+.margin-15 {
+    margin-top: 15px;
+}
+
+.margin-20 {
+    margin-top: 24px;
+}
+
+.margin-40 {
+    margin-top: 40px;
+}
+
+.center-button {
+    font-size: 10pt;
+    display: block;
+    margin: auto;
+    margin-bottom: 0;
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    border: none;   
+    height: 40px;
+    width: 150px;
+}
+
+
+.profile-small {
+    height: 20;
+    width: 20%;
+    margin-right: 15px;
+}
+
+.blue-footer-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14pt;
+    font-weight: 500;
+    color: #009DFF;
+    margin-top: 0px;
+}
+
+/* Global Style Rules Ends Here */
+
+/* ********************************************************************************************************** */
+
+/* Landing Page CSS Starts Here*/
+
+
+
+
+
+
+
+/* About Page CSS Starts Here*/
+
+.about-bg {
+    background: url('/assets/img/pageBG/coder.jpg');
+    width: 100%;
+    max-height: 50%;
+    min-height: 30%;
+    padding-bottom: 10%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1000;
+}
+
+.header-title {
+    font-family: 'Montserrat';
+    color: white;
+    text-align: center;
+    font-size: 30pt;
+}
+
+.header-sub {
+    font-size: 16pt;
+    color: white;
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.header-text-div{
+    margin: auto;
+    margin-top: 10%;
+
+}
+
+.about-middle-sec {
+    z-index: 100;
+    background-color: white;
+    height: auto;
+    width: 100%;
+    
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.about-mid-text {
+    font-family: 'Nunito Sans';
+    text-align: center;
+    width: 70%;
+    margin: auto;
+    padding-top: 3%;
+    
+    
+}
+.about-mid-bg {
+    background-image: url('/assets/img/pageBG/DevelupStartup.png');
+    width: 100%;
+    padding-bottom: 30%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* Signup CSS Starts Here */
+
+
+#call-to-action {
+    border: 1.5px solid white; 
+    margin-top: 8px; 
+    padding-left: 26px; 
+    padding-right: 26px; 
+    margin-left: 20px;
+}
+
+#header-slogan {
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    color: white;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+#header-logo {
+    font-family: 'Montserrat';
+    color: white;
+    font-size: 20pt;
+}
+
+
+#blankprofile{
+    height: 125px;
+    width: 125px;
+}
+
+/*Home Landing page form*/
+.landing-form {
+    padding-left: 20px;
+    font-size: 10pt;
+    display: block;
+    margin: auto;
+    border-radius: 4px;
+    margin-top: 25px;
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    border: none;
+    height: 40px;
+    width: 300px;
+}
+
+.account-detail-fields {
+    margin-bottom: 10px;
+}
+
+
+.account-creation-fields {
+    font-size: 10pt;
+    display: block;
+    margin: auto;
+    font-family: 'Nunito Sans';
+    font-weight: 200;
+    border: none;
+    height: 40px;
+    width: 300px;
+}
+
+/* Signup form CSS Ends Here */
+
+/* ********************************************************************************************************** */
+
+
+/* Account Select CSS Starts Here */
+
+#account-select-list {
+    margin-top: 10px;
+    list-style-type: circle;
+
+}
+
+.image-upload > input
+{
+    display: none;
+}
+
+/* From Williams css*/
+.morespacenav li{
+    padding-left: 20px;
+}
+
+.morespacenav .app-notifications .icon{
+    color: #fff !important;
+}
+
+.btn-clear{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+}
+
+
+.btn-clear:hover{
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #e5e5e5;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+}
+
+.btn-width-fixed {
+    width: 100px;
+    border: solid 1px;
+    border-color: #009DFF;
+}
+
+
+
+/*Profile Banner*/
+.margin-drop {
+    margin-top:20px;
+}
+
+/*END Profile Banner*/
+
+
+/*Messenger UI*/
+.message-box-height {
+    position: relative;
+    height: 100%;
+}
+
+.message-display-left {
+    border-radius: 8px 8px 8px 8px;
+    font-weight: 400;
+    color: #5d5d5d;
+    font-size: 11pt;
+    padding: 20px; 
+    width: 400px;
+    height: auto; 
+    border: 1px solid rgba(0,0,0,0.3);
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.message-display-right {
+    border-radius: 8px 8px 8px 8px;
+    font-size: 11pt;
+    background: #009DFF;
+    font-weight: 400;
+    padding: 20px; 
+    color: white;
+    width: 400px;
+    height: auto; 
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+
+
+/**** Home Page CSS Starts Here *****/
+
+
+.home-blog-cards {
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.home-blog-cards a {
+    text-decoration: none;
+}
+
+/**
+ * Helpers
+ */
+.border-tlr-radius { 
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px; 
+}
+
+.text-center { text-align: center; }
+
+.radius { border-radius: 2px; }
+
+.padding-tb { padding-top: 1.6rem; padding-bottom: 1.6rem;}
+
+.shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
+
+.shadowDepth1 {
+   box-shadow: 
+  		0 1px 3px rgba(0,0,0, 0.12),
+    	0 1px 2px rgba(0,0,0, 0.24);      
+}
+
+
+/**
+ * Card Styles
+ */
+
+.card {
+	background-color: #fff;
+	margin-bottom: 1.6rem;
+	max-width: 400px;
+	margin: 20px;
+
+}
+
+.card__padding {
+	padding: 1.6rem;
+}
+ 
+.card__image {
+	min-height: 100px;
+	background-color: #eee;
+}
+	.card__image img {
+		width: 100%;
+		max-width: 100%;
+		display: block;
+	}
+
+.card__content {
+	position: relative;
+}
+
+/* card meta */
+.card__meta time {
+	font-size: 1.5rem;
+	color: #bbb;
+	margin-left: 0.8rem;
+}
+
+/* card article */
+.card__article a {
+	text-decoration: none;
+	color: #5d5d5d;
+	transition: all 0.5s ease;
+}
+	.card__article a:hover {
+		color: #2980b9;
+	}
+
+/* card action */
+.card__action {
+	overflow: hidden;
+	padding-right: 1.6rem;
+	padding-left: 1.6rem;
+	padding-bottom: 1.6rem;
+}
+	 
+.card__author {}
+
+	.card__author img,
+	.card__author-content {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.card__author img{
+		border-radius: 50%;
+		margin-right: 0.6em;
+	}
+
+.card__share {
+	float: right;
+	position: relative;
+	margin-top: -42px;
+}
+
+.card__social {
+	position: absolute;
+	top: 0;
+	right: 0;
+	visibility: hidden;
+	width: 160px;
+	transform: translateZ(0);
+  	transform: translateX(0px);
+  	transition: transform 0.35s ease;
+}
+	.card__social--active {
+		visibility: visible;
+		/*z-index: 3;*/
+		transform: translateZ(0);
+ 		transform: translateX(-48px);
+  		transition: transform 0.35s ease;
+	}
+
+.share-toggle {
+	z-index: 2;
+}
+.share-toggle:before {
+	content: "\f1e0";
+	font-family: 'FontAwesome';
+	color: #3498db;
+}
+	.share-toggle.share-expanded:before {
+		content: "\f00d";
+	}
+
+.share-icon {
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #fff;
+	transition: all 0.3s ease;
+	outline: 0;
+
+	box-shadow: 
+	  		0 2px 4px rgba(0,0,0, 0.12),
+	    	0 2px 4px rgba(0,0,0, 0.24);
+}
+	.share-icon:hover,
+	.share-icon:focus {
+		box-shadow: 
+	  		0 3px 6px rgba(0,0,0, 0.12),
+	    	0 3px 6px rgba(0,0,0, 0.24);
+
+	    -webkit-transform: scale(1.2);
+	    -moz-transform: scale(1.2);
+	    -ms-transform: scale(1.2);
+	    -o-transform: scale(1.2);
+	    transform: scale(1.2);
+	}
+
+.facebook {
+	background-color: #3b5998; 
+}
+.twitter {
+	background-color: #00abe3; 
+}
+.googleplus {
+	background-color: #d3492c;
+}
+
+.facebook,
+.twitter,
+.googleplus {
+	color: #fff;
+}
+
+	.facebook:hover,
+	.twitter:hover,
+	.googleplus:hover {
+		color: #eee;
+	}
+
+.lead p {
+    font-size: 14pt;
+    margin-top: 2em;
+    line-height: 2em;
+    padding-bottom: 1em;
+}
+
+.lead h3 {
+    font-size: 20pt;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #009DFF;
+}
+
+.blog-btn {
+    min-width: 400px;
+    min-height: 3em;
+    color: #009DFF;
+    display: block;
+    background: white;
+    margin: auto auto 3em auto !important;
+    border: 1px solid #009DFF;
+    font-size: 13pt;
+}
+
+#home-hr {
+    margin: 5.5em auto 3em auto;
+}
+
+.feedback-sub-btn{
+    min-width: 300px;
+    min-height: 3em;
+    color: white;
+    display: block;
+    background: #009DFF;
+    margin: 2em auto 6em auto !important;
+    border: none;
+    font-size: 13pt;
+    
+}
+
+
+/*********** CoFinder Listing CSS Starts Here ***********/
+
+
+.cf-ls-skills {
+    font-family: "Montserrat", sans-serif;
+    color: #5D5D5D;
+    margin-top: -15px;
+    margin-bottom: 17px;
+}
+
+.listing-tile button {
+    margin-bottom: 1em;
+}
+
+.cf-looking-for{ 
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-bottom: 0.8em;
+    color: #5d5d5d;
+    font-size: 12pt;
+    position: relative;
+    bottom: 0.64em;
+    margin-top: 1.6em;   
+    
+}
+
+
+.opportunities-company {
+    display: inline-block;
+    color: #009DFF;
+    padding-top: -1em;
+}
+
+.opportunities-location {
+    display: inline-block;
+    font-family: "Nunito Sans", sans-serif;
+    color: #009DFF;
+    margin-top: -8px;
+    
+}
+
+
+
+#facebookprofilebig {
+    width: 10vw !important;
+    border: 2px solid white;
+    
+}
+
+.signup-header-logo {
+    font-size: 18pt;
+    font-weight: 500;
+    margin-top: 2em !important;
+    margin-bottom: -2em;
+}
+
+
+
+
+.drop-shadow {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16) !important;
+    height: inherit !important;
+    padding-bottom: 2em;
+ 
+}
+
+.drop-shadow button {
+    width: 21em;
+    height: 4em;
+    margin-top: 2em;
+}
+
+
+
+.secondary-cta {
+    background: transparent !important;
+    border: 1px solid #009DFF !important;
+    color: #009DFF !important;
+    margin-top: 2.6em !important;
+}
+
+@-webkit-keyframes gradient-bg {
+    0%{background-position:0% 11%}
+    50%{background-position:100% 90%}
+    100%{background-position:0% 11%}
+}
+@-moz-keyframes gradient-bg {
+    0%{background-position:0% 11%}
+    50%{background-position:100% 90%}
+    100%{background-position:0% 11%}
+}
+@keyframes gradient-bg { 
+    0%{background-position:0% 11%}
+    50%{background-position:100% 90%}
+    100%{background-position:0% 11%}
+}
+
+.account-type-screen {
+    
+        background: linear-gradient(313deg, #009dff, #006fff, #00dbff);
+        background-size: 600% 600%;
+        -webkit-animation: gradient-bg 24s ease infinite;
+        -moz-animation: gradient-bg 24s ease infinite;
+        animation: gradient-bg 24s ease infinite;
+        
+        
+}
+
+.account-type-screen p {
+    
+    color: white;
+    text-align: center;
+    font-size: 14pt;
+    margin-top: 5em;
+    margin-bottom: -2em !important;
+}
+
+.user-about-tile {
+    padding-left: 0.4em;
+    padding-top: 1em;
+}
+
+
+
+.user-about-tile p {
+    padding-left: 0.7em;
+    display: inline-block;
+    position: relative;
+    bottom: 0.4em;
+}
+
+.profile-headers {
+    font-weight: 400;
+    font-size: 15pt;
+    padding-left: 2em;
+    color: #009DFF;
+}
+
+
+#about-description {
+    padding-top: 0.8em;
+    font-size: 11.7pt;
+    line-height: 1.8em;
+    padding-left: 1.2em;
+    padding-bottom: 0.1em;
+}
+
+
+
+#user-skill-title {
+    color: #009DFF;
+    padding-left: 1em;
+    padding-top: -0.4em;
+    margin-top: 1em;
+}
+
+
+#user-skill-description {
+    font-size: 13pt;
+    padding-left: 1em;
+    padding-top: 2em;
+}
+
+.user-skill-tiles {
+    padding: 1em 1em 1.4em 1em;
+    
+}
+
+
+.user-skill-tiles i {
+    padding-right: 0.7em;
+    display: inline-block;
+    position: relative;
+    top: 0.3em;
+    margin-left: 0.6em;
+    margin-top: 1.1em;
+
+}
+
+
+.user-skill-tiles li {
+    display: inline-block;
+}
+
+#user-skill-link {
+    font-size: 12pt;
+}
+
+
+.profile-action-btn {
+    padding-bottom: 0.7em;
+    padding-top: -1.4em;
+    padding-right: 1.8em;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+    margin-right: 25px;
+    text-align: center;
+}
+
+.profile-action-btn i {
+    
+    display: inline-block;
+    position: relative;
+    top: 0.3em;
+
+    
+}
+
+
+.skill-tile-edit {
+    float: right ;
+    position: absolute;
+    top: -2.5em;
+}
+
+
+
+/* Gallery */
+
+
+div.gallery {
+    margin: 2em 0 2em 3em;
+    float: left;
+    width: 230px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    
+    
+}
+
+div.gallery:hover {
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+div.gallery img {
+    width: 100%;
+    
+    
+}
+
+div.showcase-img {
+    width: 100%;
+    height: 300px;
+    overflow-y: hidden;
+}
+
+
+div.desc h5 {
+    padding: 1em;
+    text-align: left;
+    color: #009DFF;
+    font-weight: 400;
+    
+}
+
+@media screen and (max-width: 993px) {
+    
+    .skill-tile-edit {
+    float: right ;
+    position: absolute;
+    top: -7em;
+    left: 83%;
+}
+
+    
+}
+
+.secondary-cta {
+    border-radius: 7px;
+    padding: 1em 1.5em 1em 1.5em;
+}
+
+
+.signup-p {
+    margin-top: 1em;
+    font-size: 11pt !important;
+    line-height: 2em;
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Marcus Hahnheuser">
+
+    <title>
+
+        Payment
+
+    </title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Nunito+Sans:300,400,700,700i" rel="stylesheet">
+    <link href="../../assets/css/toolkit.css" rel="stylesheet">
+    <link href="../../assets/css/application.css" rel="stylesheet">
+
+    <link href="../../assets/css/temp.css" rel="stylesheet">
+    <link href="../../assets/css/payment.css" rel="stylesheet">
+    
+    <!-- DONT FORGET to delete when stripe is switched to new form -->
+    <link href="../../assets/css/stripe_temp.css" rel="stylesheet">
+    
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+    <!-- Stripe JS API -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="../../assets/js/stripe.js"></script>
+
+    <!-- JS for facebook API -->
+    <script src="facebook/controller_facebook.js"></script>
+    <script src="facebook/sdk.js"></script>
+    <script src="facebook/model_facebook.js"></script>
+    <script src="facebook/view_facebook.js"></script>
+    
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+    </style>
+  </head>
+
+<body style="background-color: #f5f8fa;">
+
+    <div class="growl" id="app-growl"></div>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top app-navbar">
+        <h4 class="intext-logo-white">Develup.io</h4>
+    </nav>
+  
+    <!--Left Profile info pannel -->
+    <div class="container p-t-md">
+        <div class="col-md-8 col-md-offset-2">
+    <!--END Left Profile info pannel -->
+
+        <div class="nav-margin">
+            <p class="font-nunito-sans-title center-text">Welcome to <span class="title-text-logo-blue">Premium!</span> 🎉</p>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-body">
+        
+                <div class="margin-20">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <p class="font-nunito-sans center-text"><span class="intext-logo-blue">Develup.io</span> Premium is a superb tool and loving companion to have on your entrepreneurial journey. Who knows what kind of life-threating obstacles you may come across?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="margin-15">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <p class="font-nunito-sans center-text">Don’t worry! You won’t be charged for your first 31 days and you can always cancel at any time!</p>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            
+            <!-- This is the temporary code for Stripe Api-->
+            <form>
+              <div class="group">
+                <label>
+                  <span>Name</span>
+                  <input name="cardholder-name" class="field" placeholder="Placeholder" />
+                </label>
+                <label>
+                  <span>Phone</span>
+                  <input class="field" placeholder="04 12345678" type="tel" />
+                </label>
+              </div>
+              <div class="group">
+                <label>
+                  <span>Card Details</span>
+                  <div id="card-location" class="field"></div>
+                </label>
+              </div>
+              <button type="submit">Pay Amount</button>
+              <div class="outcome">
+                <div class="error"></div>
+                <div class="success">
+                  Success! Your Stripe token is <span class="token"></span>
+                </div>
+              </div>
+            </form>
+            <!-- This is end of the temporary code for Stripe Api-->
+            
+            
+            
+            <!--DO NOT DELETE-->
+            <!--
+                <div class="margin-20">
+                    <form class="form-horizontal">
+                        
+                    <div class="form-group">
+                        <label class="col-sm-offset-2 col-sm-2 control-label">Amount</label>
+                        <div class="col-sm-6">
+                            <p class="font-nunito-sans-title"><span class="title-text-logo-blue">$14.99</span> / Month</p>
+                        </div>
+                    </div>
+                
+                    <div class="form-group">
+                        <label class="col-sm-offset-2 col-sm-2 control-label">Name on Card</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="inputEmail3" placeholder="Jane Doe">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    <label class="col-sm-offset-2 col-sm-2 control-label">Card Number</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="cardNumber" placeholder="4242-4242-4242-4242">
+                        </div>
+                    </div>
+                </div>
+                    
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="col-sm-offset-2 col-sm-2 control-label">Card Expiry</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="cardExpiry" placeholder="MM/YYYY">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-offset-1 col-sm-1 control-label">CCV</label>
+                        <div class="col-sm-2">
+                            <input type="text" class="form-control" id="cardCcv" placeholder="123">
+                        </div>
+                    </div>
+                </form>
+                    
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-6">
+                        <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> I agree to the <a href="#">terms & conditions</a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-6">
+                    <button type="submit" class="btn btn-primary">Confirm Payment</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    -->
+</div>
+</div>
+</div>
+</div>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/chart.js"></script>
+    <script src="../../assets/js/toolkit.js"></script>
+    <script src="../../assets/js/application.js"></script>
+    <script>
+
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      });
+
+    </script>
+
+  </body>
+</html>

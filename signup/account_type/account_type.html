@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Marcus Hahnheuser">
+
+    <title>
+
+        Select Account
+
+    </title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Nunito+Sans:300,400,700,700i" rel="stylesheet">
+    <link href="../../assets/css/toolkit.css" rel="stylesheet">
+    <link href="../assets/css/application.css" rel="stylesheet">
+
+    <link href="/assets/css/temp.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="facebook/controller_facebook.js"></script>
+    <script src="facebook/sdk.js"></script>
+    <script src="facebook/model_facebook.js"></script>
+    <script src="facebook/view_facebook.js"></script>
+    
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+       
+        min-width: 100%;
+       
+      }
+      
+    </style>
+  </head>
+
+ <body class="account-type-screen">
+
+   <div class="growl" id="app-growl"></div>
+
+  
+  <h4 class="intext-logo-white signup-header-logo"><img src="/assets/img/logotrial1.png" width="35px" /> Develup.co</h4>
+  
+  <p>Welcome Aboard! Please select your Account Type:</p>
+  
+  <!--Left Profile info pannel -->
+  <div class="container p-t-md">
+  <div class="col-md-10 col-md-offset-1">
+<!--END Left Profile info pannel -->
+
+<div class="nav-margin">
+      <div class="col-md-5 col-md-offset-1">
+        <div class="panel panel-primary drop-shadow">
+          <div class="panel-body">
+            <h1 style="text-align: center; font-family: 'Montserrat', sans-serif; font-size: 12pt; font-weight: 600; color: #009DEB; border-bottom: 1px solid #009DEB; padding-bottom: 20px;">Basic - Free</h1>
+              <div>
+                <ul style="margin-top: 30px;">
+                  <li class="font-nunito-sans" id="account-select-list">Apply to Startup Opportunities around the world, become a part of something big in your area!</li>
+                  <li class="font-nunito-sans" id="account-select-list">Discover and connect with global leaders and innovators.</li>
+                  <li class="font-nunito-sans" id="account-select-list">Create profiles for you and your startups and allow investors and new connections to discover your ideas.</li>
+                  <li class="font-nunito-sans" id="account-select-list">List yourself on the Develup.io Talent Pool and let other entrepeneurs reach out to you for a very special partnership!</li>
+                  <li class="font-nunito-sans" id="account-select-list">Post your own 30-day listings for a $10.99.</li>
+                  <li class="font-nunito-sans" id="account-select-list">Join the growing startup network and be a part of  a global movement for startup growth!</li>
+                </ul>
+                <a href="/profile/index.html">
+                  <button type="button" class="btn btn-primary btn-md center-button secondary-cta">
+                    <span class="font-nunito-sans" style="color: #009DFF;">Begin your journey</span>
+                  </button>
+                </a>
+              </div>
+          </div>
+        </div>
+    </div>
+  
+
+  <div class="col-md-5">
+    <div class="panel panel-primary drop-shadow">
+      <div class="panel-body">
+        <h1 style="text-align: center; font-family: 'Montserrat', sans-serif; font-size: 12pt; font-weight: 600; color: #009DEB; border-bottom: 1px solid #009DEB; padding-bottom: 20px;">Premium - AU $14.99/mo 🚀</h1>
+        <div>
+          <ul style="margin-top: 30px;">
+            <li class="font-nunito-sans" id="account-select-list">Access to all Basic Features!</li>
+            <li class="font-nunito-sans" id="account-select-list">No ads!</li>
+            <li class="font-nunito-sans" id="account-select-list">Post unlimited listings free of charge!</li>
+            <li class="font-nunito-sans" id="account-select-list">Enjoy full access to the Develup.io Talent Pool and recruit entrepreneurial talent for your unstoppable team!</li>
+            <li class="font-nunito-sans" id="account-select-list">Find the perfect cofounder with the Develup.io CoFinder and kickstart your entrepreneurial journey!</li>
+            <li class="font-nunito-sans" id="account-select-list">Post job opportunities within your startup and let skilled innovators come to you using our Opportunities Listing</li>
+            <li class="font-nunito-sans" id="account-select-list">Grow your teams, build your MVP and launch your startup!</li>
+          </ul>
+          <a href="../../payment/payment.html">
+            <button type="button" class="btn btn-primary btn-md center-button">
+              <span class="font-nunito-sans" style="color: white;">Try Premium Free</span>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+ </div>
+</div>
+  
+
+  
+  
+  
+
+
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/chart.js"></script>
+    <script src="../../assets/js/toolkit.js"></script>
+    <script src="../../assets/js/application.js"></script>
+    <script>
+
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      });
+
+    </script>
+
+  </body>
+</html>
